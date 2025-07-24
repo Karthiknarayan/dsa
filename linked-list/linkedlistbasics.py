@@ -3,13 +3,10 @@ class Node:
     def __init__(self,data,next):
         self.data=data
         self.next=next
-
-
+        
 class Linkedlist:
     def __init__(self):
         self.head=None
-
-    
 
     def insertatbeg(self,data):
         k=Node(data,self.head)
@@ -50,12 +47,6 @@ class Linkedlist:
 
         k=Node(data,current.next)
         current.next=k
-
-
-        
-
-
-
 
 l=Linkedlist()
 l.insertatbeg(10)
