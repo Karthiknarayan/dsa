@@ -48,6 +48,19 @@ class Linkedlist:
         k=Node(data,current.next)
         current.next=k
 
+#counts the number of nodes:
+    def count(self):
+        cur=self.head
+        if self.head==None:
+            return 0
+        
+        count=0
+        while cur:
+            count+=1
+            cur=cur.next
+        return count
+    
+
 l=Linkedlist()
 l.insertatbeg(10)
 l.insertatbeg(20)
@@ -62,3 +75,4 @@ l.itra()
 print("\n")
 l.insertatapos(4,88)
 l.itra()
+print(f"the total nodes are",l.count())
