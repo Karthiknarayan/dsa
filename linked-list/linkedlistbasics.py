@@ -63,8 +63,25 @@ class Linkedlist:
             cur=cur.next
         
         prev.next=None
-        return
-            
+        
+    def delatapos(self,pos):
+        count=0
+        cur=self.head
+        if pos==0:
+            self.delatbeg()
+            return
+
+        while cur is not None and count<pos-1:
+            count+=1
+            cur=cur.next   
+
+        if cur is None:
+            print(f"no valid pos to del")
+            return
+
+        right=cur.next
+        right=right.next
+        cur.next=right
 
 #counts the number of nodes:
     def count(self):
@@ -87,27 +104,41 @@ class Linkedlist:
 
 
 l=Linkedlist()
-l.insertatbeg(10)
-l.insertatbeg(20)
-l.insertatbeg(30)
-l.itra()
-#the above code insert at beg (one before other)
-l.insertatend(3)
-l.insertatend(2)
-l.insertatend(1)
-l.itra()
-#the above code inserts at the end (add after given ones)
-print("\n")
-l.insertatapos(4,88)
-l.itra()
-print(f"the total nodes are",l.count())
-#remove at beg
-l.delatbeg()
-l.itra()
+# l.insertatbeg(10)
+# l.insertatbeg(20)
+# l.insertatbeg(30)
+# l.itra()
+# #the above code insert at beg (one before other)
+# l.insertatend(3)
+# l.insertatend(2)
+# l.insertatend(1)
+# l.itra()
+# #the above code inserts at the end (add after given ones)
+# print("\n")
+# l.insertatapos(4,5)
+# l.itra()
+# print(f"the total nodes are",l.count())
+# #remove at beg
+# l.delatbeg()
+# l.itra()
 
-l.delatbeg()
+# l.delatbeg()
+# l.itra()
+# print(f"the total nodes are",l.count())
+# l.delatend()
+# l.itra()
+# print(f"the total nodes are",l.count())
+# l.delatapos(0)
+# l.itra()
+# print(f"the total nodes are",l.count())
+
+l.insertatbeg(0)
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+
 l.itra()
-print(f"the total nodes are",l.count())
-l.delatend()
+print("\n")
+l.delatapos(4)
 l.itra()
-print(f"the total nodes are",l.count())
