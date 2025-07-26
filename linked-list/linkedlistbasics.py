@@ -103,6 +103,24 @@ class Linkedlist:
             current=current.next
 
 
+#search an element in the linked list
+    def search(self, data):
+        cur=self.head
+        if cur==None:
+            print(f"no element in the linked list t search")
+            return
+        count=0
+        while cur is not None:
+            if data==cur.data:
+                print(f"the element found in the given linked list at the position",count)
+               
+                return
+            cur=cur.next
+            count=count+1
+        if cur==None:
+            print(f"element not found")
+
+
 l=Linkedlist()
 # l.insertatbeg(10)
 # l.insertatbeg(20)
@@ -132,13 +150,22 @@ l=Linkedlist()
 # l.itra()
 # print(f"the total nodes are",l.count())
 
-l.insertatbeg(0)
-l.insertatbeg(1)
-l.insertatbeg(2)
-l.insertatbeg(3)
-l.insertatbeg(4)
-
+# l.insertatbeg(0)
+# l.insertatbeg(1)
+# l.insertatbeg(2)
+# l.insertatbeg(3)
+# l.insertatbeg(4)
+l.insertatend(0)
+l.insertatend(1)
+l.insertatend(2)
+l.insertatend(3)
+l.insertatend(4)
+l.insertatend(5)
+l.insertatend(6)
 l.itra()
 print("\n")
-l.delatapos(4)
+l.itra()
+# l.delatapos(4)
+# l.itra()
+l.search(3)
 l.itra()
