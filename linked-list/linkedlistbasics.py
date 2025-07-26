@@ -121,6 +121,20 @@ class Linkedlist:
             print(f"element not found")
 
 
+    def reverse(self):
+        prev=None
+        cur=self.head
+        while cur is not None :
+            nexnode=cur.next
+            cur.next=prev
+            prev=cur
+            cur=nexnode
+        
+        self.head=prev
+        
+
+
+
 l=Linkedlist()
 # l.insertatbeg(10)
 # l.insertatbeg(20)
@@ -162,10 +176,13 @@ l.insertatend(3)
 l.insertatend(4)
 l.insertatend(5)
 l.insertatend(6)
+l.insertatend("india")
 l.itra()
 print("\n")
 l.itra()
 # l.delatapos(4)
 # l.itra()
-l.search(3)
+l.search("india")
+l.itra()
+l.reverse()
 l.itra()
