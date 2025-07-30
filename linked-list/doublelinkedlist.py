@@ -46,6 +46,18 @@ class Doublelinkedlist:
         if temp is not None:
             temp.prev=new
 
+#delete functions
+    def delatbeg(self):
+        cur=self.head
+        if self.head is None:
+            print(f"no elements to delete from the linkedlist")
+            return
+        if cur.next is None:
+            self.head=None
+            return
+        cur=cur.next
+        cur.prev=None
+        self.head=cur
 
 #print or iteration
     def itra(self):
@@ -84,3 +96,10 @@ l.insertatapos(1,200)
 l.insertatapos(4,300)
 l.itra()
 print(f"there are total {l.count()} nodes in the list")
+l.delatbeg()
+l.delatbeg()
+l.delatbeg()
+l.delatbeg()
+l.delatbeg()
+
+l.itra()
