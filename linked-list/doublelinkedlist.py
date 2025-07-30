@@ -59,6 +59,23 @@ class Doublelinkedlist:
         cur.prev=None
         self.head=cur
 
+    def delatend(self):
+        if self.head is None:
+            print(f"no elements to delete from the linkedlist")
+            return
+        cur=self.head
+        if cur.next is None:
+            self.head=None
+            return
+        
+        while cur.next is not None:
+            cur=cur.next
+        
+        left=cur.prev
+        cur.prev=None
+        left.next=None
+
+
 #print or iteration
     def itra(self):
         cur=self.head
@@ -96,10 +113,10 @@ l.insertatapos(1,200)
 l.insertatapos(4,300)
 l.itra()
 print(f"there are total {l.count()} nodes in the list")
-l.delatbeg()
-l.delatbeg()
-l.delatbeg()
-l.delatbeg()
-l.delatbeg()
+l.delatend()
+l.delatend()
+l.delatend()
+l.delatend()
+l.delatend()
 
 l.itra()
