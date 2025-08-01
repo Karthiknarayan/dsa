@@ -75,6 +75,23 @@ class Doublelinkedlist:
         cur.prev=None
         left.next=None
 
+    def delatapos(self,pos):
+        if pos==0:
+            self.delatbeg()
+            return
+        
+        count=0
+        cur=self.head
+        while cur is not None and count<=pos-1:
+            cur=cur.next
+            count+=1
+        if cur is None:
+            print("out of range")
+
+        prevnode=cur.prev
+        prevnode.next=cur.next
+        if cur.next is not None:
+            cur.prev.prev=prevnode
 
 #print or iteration
     def itra(self):
@@ -101,22 +118,31 @@ l=Doublelinkedlist()
 # l.insertatbeg(30)
 # l.itra()
 # print("\n")
-l.insertatend(5)
-l.insertatend(4)
-l.insertatend(3)
-# l.itra()
-# print("\n")
-# l.insertatapos(0,200)
-# l.itra()
+# l.insertatend(5)
+# l.insertatend(4)
+# l.insertatend(3)
+# # l.itra()
+# # print("\n")
+# # l.insertatapos(0,200)
+# # l.itra()
 
-l.insertatapos(1,200)
-l.insertatapos(4,300)
+# l.insertatapos(1,200)
+# l.insertatapos(4,300)
+# l.itra()
+# print(f"there are total {l.count()} nodes in the list")
+# l.delatend()
+# l.delatend()
+# l.delatend()
+# l.delatend()
+# l.delatend()
+
+# l.itra()
+l.insertatend(10)
+l.insertatend(20)
+l.insertatend(30)
+l.insertatend(40)
+l.insertatend(50)
 l.itra()
-print(f"there are total {l.count()} nodes in the list")
-l.delatend()
-l.delatend()
-l.delatend()
-l.delatend()
-l.delatend()
-
+print(" ")
+l.delatapos(4)
 l.itra()
