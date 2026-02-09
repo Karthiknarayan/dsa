@@ -1,9 +1,8 @@
-# 1
-# 12
-# 123
-# 1234
-# 12345
-
+# rules for creating patterb
+#     1. no of lines = no of rows
+#     2. find no of columns and that is the j th row, somehow find the relation bw first eow and this
+#     3. always print in the inside row/rows
+#     4. observation
 
 def pattern1(n):
     for i in range(0,n):
