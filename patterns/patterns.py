@@ -26,6 +26,16 @@ def pattern3(n):
             print("",end="")
         print("")
 
+def pattern4(n):
+    for i in range(0,n):
+        for j in range(0,i):
+            print(" ",end="")
+        for j in range(0,n*2-(i*2+1)):
+            print("*",end="")
+        for j in range(0,i):
+            print(" ",end="")
+        print("")
+
 #pattern1(6)
 # 1
 # 12
@@ -41,8 +51,11 @@ def pattern3(n):
 # 12
 # 1
 
-pattern3(5)
+#pattern3(5)
  
 #     *    
 #    ***    
 #   *****    
+
+
+pattern4(5)
